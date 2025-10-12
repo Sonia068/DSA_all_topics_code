@@ -16,15 +16,19 @@ class q{
 
 
     void enq(int val){
-        if(front==0 && rear==size-1){
+        if(front==0 && rear==size-1  || (rear+1)%size==front){
               cout<<"Q is Full";
         }
 
+        // If first element, initialize front and rear
         if(front==-1){
             front=0;
+            rear=0;
         }
 
+        else{
         rear=(rear+1)%size;
+        }
         arr[rear]=val;
         cout<<"Value is inserted "<<val<<" at position "<<rear<<endl;
     }
@@ -35,18 +39,20 @@ class q{
             cout<<"Q is Empty";
         }
 
-        else{
-            // cout<<"Deleted  element is "<<arr[front];
-                     
+        else{          
             int element=arr[front];
-        //    front++;
             cout<<element<<endl;
             
-            front=(front+1)%size;
+            // Reset queue if it was the last element
+            if (front == rear) {
+                front = rear = -1;
+            } else {
+                front = (front + 1) % size;
+            }
+        }
+            
             
         }
-    }
-
 
      void display(){
         if(front==-1 && rear==-1){
@@ -61,16 +67,11 @@ class q{
                  break;
                 i=(i+1)%size;
             }
-
-            
+            cout<<endl; 
         }
      }
-
-
-    
     };
     
-
 
     int main(){
         q s;
