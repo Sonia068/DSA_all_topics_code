@@ -1,3 +1,7 @@
+/* Construct a class for implementing a stack of words. Your class
+should include functions like push(), pop(), peek(). Assume that
+there is no upper limit of the words.*/
+
 #include <iostream>
 #include <vector>
 #include <string>
