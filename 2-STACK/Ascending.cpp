@@ -11,7 +11,7 @@ void sortStack(stack<int>& s1) {
         s1.pop();
 
 
-        while (!s2.empty() && s2.top() > temp) {
+        while (!s2.empty() && s2.top() > temp) {   // "<" -> for descending
             s1.push(s2.top());
             s2.pop();
         }
