@@ -1,0 +1,99 @@
+// insert at first vacant position in level order to maintain completeness.
+#include <iostream>
+#include <queue>
+using namespace std;
+
+class node{
+  private:
+    int data;
+    node* left,*right;
+
+    public:
+      node(){
+      data=0;
+      left=right=NULL;
+    }  
+
+
+    node(int v){
+      data=v;
+      left=right=NULL;
+    }  
+
+    // Insertion :
+// TC-O(n)  ,  SC-O(n):
+node* insert(node* root,int k){
+   if(root==NULL) {
+     root=new node(k);
+     return root;
+   }
+
+     queue<node*>q;
+     q.push(root);
+        while(!q.empty()){
+            node* curr=q.front();
+            q.pop();
+
+            if(curr->left!=NULL){
+                q.push(curr->left);
+            }
+            else{
+                curr->left=new node(k);
+                return root;
+            }
+
+
+            
+            if(curr->right!=NULL){
+                q.push(curr->right);
+            }
+            else{
+                curr->right=new node(k);
+                return root;
+            }
+
+            
+        }
+
+        return root;
+     }
+
+
+     // Recursive approach:
+   void inorderrec(node* root){
+      if(root==NULL) return ;
+
+    inorderrec(root->left);
+    cout<<root->data<<" ";
+    inorderrec(root->right);
+
+}
+
+};
+
+
+
+int main(){
+    node nn;
+    node* root=NULL;
+
+    int n;
+    cout<<"Enter number of nodes: ";
+    cin>>n;
+
+    int value;
+    cout<<"Enter "<<n<<" values:\n";
+
+    for(int i=0;i<n;i++){
+        cin>>value;
+        root = nn.insert(root,value);
+    }
+
+    cout<<"\nInorder Traversal: ";
+    nn.inorderrec(root);
+
+    return 0;
+
+
+
+}
