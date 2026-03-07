@@ -1,4 +1,4 @@
-//--------------Adjacency matrix(Graph)--------------
+//--------------Adjacency matrix(Graph)--------------(unweighted graph)
 #include <iostream>
 using namespace std;
 
