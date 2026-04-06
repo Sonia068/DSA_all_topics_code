@@ -1,4 +1,4 @@
-// Create and  Declare Binary tree :
+// Create and  Declare Binary tree :(Linked List Representation)
 #include <iostream>
 using namespace std;
 
