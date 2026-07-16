@@ -32,14 +32,14 @@ int main() {
     int graph[n+1][n+1];
 
     // Initialize the adjacency matrix with 0s
-    for (int i = 0; i <= n; i++) {
-        for (int j = 0; j <= n; j++) {
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n; j++) {
             graph[i][j] = 0;
         }
     }
 
     // Input edges and populate the adjacency matrix
-    cout << "Enter the edges (source destination):" << endl;
+    cout << "Enter the edges (source destination wt.):" << endl;
     for (int i = 0; i < e; i++) {
         int src, dest,wt;
         cin >> src >> dest>> wt;
@@ -49,8 +49,8 @@ int main() {
 
     // Print the adjacency matrix
     cout << "Adjacency Matrix:" << endl;
-    for (int i = 0; i <=n; i++) {
-        for (int j = 0; j <=n; j++) {
+    for (int i = 1; i <=n; i++) {
+        for (int j = 1; j <=n; j++) {
 
             cout << graph[i][j] << " ";
         }
